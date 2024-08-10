@@ -1,0 +1,37 @@
+import java.util.*;
+public class guessnum{
+public static void main(String args[]){
+Scanner sc=new Scanner(System.in);
+System.out.println("I have chosen a number between 1 and 100. Can you guess it?");
+System.out.println("You have " + 5 + " attempts to guess the correct number.");
+
+Random random = new Random();
+int b=random.nextInt(100)+1;
+int max=5;
+int c=1;
+int score=0;
+for(int i=0;i<5;i++){
+System.out.print("Guess The Number : ");
+int a =sc.nextInt();
+if(a==b){
+System.out.println("CONGRATULATIONS! You've guessed the correct number in "+c+" Attempts only");
+System.out.println("YOUR SCORE IS: "+(max-c+1));
+break;
+}
+else if(i<4 && a<b){
+System.out.println("TOO LOW!...TRY AGAIN!");
+c++;
+}
+else if(i<4 && a>b){
+System.out.println("TOO HIGH!...TRY AGAIN!");
+c++;
+}
+else{
+	System.out.println("Sorry, you've used all your attempts. The correct number was " + b);
+}
+}
+}
+}
+
+
+
